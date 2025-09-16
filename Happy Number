@@ -1,0 +1,10 @@
+class Solution:
+ def happynumber(self,n):
+  seen=set()
+  while n!=1 and n not in seen:
+   seen.add(n)
+   val=0
+   for digits in str(n):
+     val+=int(digits)**2
+  n=val
+return n==1
