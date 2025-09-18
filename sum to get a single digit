@@ -1,0 +1,10 @@
+class Solution:
+ def sum(self,num):
+  while(num>=10):
+   sum=0
+   for digits in str(num):
+     sum+=int(digits)
+   num=sum
+  return num
+     
+   
