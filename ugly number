@@ -1,3 +1,4 @@
+
 class Solution:
  def ugly(n):
   if(n<=0):
