@@ -1,3 +1,4 @@
+
 class Solution:
  def sum(self,num):
   while(num>=10):
