@@ -1,0 +1,6 @@
+class Solution:
+ def missing(self,nums):
+  n=len(nums)
+  ac=n*(n+1)//2
+  u=sum(nums)
+  return ac-u
