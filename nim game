@@ -1,0 +1,3 @@
+class Solution:
+ def wingame(self,n):
+  return n%4!=0
