@@ -1,0 +1,5 @@
+from array import *
+vals=array('i',[5,4,8,-9,0])
+print(vals)
+newarr=array(vals.typecode,[a*a for a in vals])
+print(newarr)
