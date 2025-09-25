@@ -1,3 +1,4 @@
+
 class Solution:
  def major(self,nums):
   count=0
