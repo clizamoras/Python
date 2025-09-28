@@ -1,0 +1,12 @@
+class Solution:
+ def gcd(self,n1,n2):
+  gcd=1
+  for i in range(min(n1,n2)):
+   try:
+      if n1%i==0 and n2%i==0:
+        gcd=i
+   except ZeroDivisionError:
+       print("invalid")
+  print("GCD is"gcd)
+obj=Solution()
+obj.gcd(3,9)
