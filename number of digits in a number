@@ -1,0 +1,8 @@
+class Solution:
+ def countnumber(self,n):
+  count=0
+  for i in str(n):
+   count+=1
+  print(count)
+obj=Solution()
+obj.countnumber(14)
