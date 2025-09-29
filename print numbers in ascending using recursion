@@ -1,0 +1,9 @@
+class Solution:
+ def printnumbers(self,n):
+  if n==0:
+    return
+  else:
+  self.printnumbers(n-1)
+  print(n)
+obj=Solution()
+obj.printnumbers(5)
