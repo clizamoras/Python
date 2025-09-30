@@ -1,0 +1,9 @@
+class Solution:
+ def name(self,n):
+  if(n==0):
+    return 0
+  else:
+    print("Raj")
+    self.name(n-1)
+obj=Solution()
+obj.name(5)
