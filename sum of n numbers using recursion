@@ -1,0 +1,10 @@
+class Solution:
+ def sum(self,n):
+  if n==0:
+   return 0
+  else:
+   s=self.sum(n-1)+n
+   print(s)
+   return s
+obj=Solution()
+obj.sum(4)
