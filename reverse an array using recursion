@@ -1,0 +1,14 @@
+class Solution:
+ def __init__(self,arr):
+  self.arr=arr
+ def reverser(self,i=0):
+  n=len(self.arr)
+  if(i>=n//2):
+   return 
+  else:
+   self.arr[i],self.arr[n-1-i]=self.arr[n-1-i],self.arr[i]
+   self.reverser(i+1)
+a=[1,2,3,4,5]
+obj=Solution(a)
+obj.reverser()
+print(a)
