@@ -1,0 +1,10 @@
+class Solution:
+ def factorial(self,n):
+  if(n==0):
+    return 1
+  else:
+   f=self.factorial(n-1)*n
+   print(f)
+   return f
+obj=Solution()
+obj.factorial(5)
