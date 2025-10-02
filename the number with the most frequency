@@ -1,0 +1,14 @@
+class Solution():
+ def frequency(self,nums):
+  freq={}
+  for num in nums:
+   if num in freq:
+    freq[num]+=1
+   else:
+    freq[num]=1
+  f=max(freq.values()) // to the the fequency
+  a=max(freq,key=freq.get) //to get the key with th emaximum frequency
+  return a
+nums=[4,2,8,4,2,6,4]
+obj=Solution()
+print(obj.frequency(nums))
