@@ -1,0 +1,15 @@
+class Solution()
+ def frequency(self,nums):
+   freq={}
+   for num in nums:
+    if num in freq:
+     freq[num]+=1
+    else:
+    freq[num]=1
+  result=[]
+  for key in freq:
+  result.append((key,freq[key]))
+  return result
+nums=[4,2,8,4,2,6,4]
+obj=Solution()
+print(obj.frequency(nums))
