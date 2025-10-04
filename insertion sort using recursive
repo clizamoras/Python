@@ -1,0 +1,17 @@
+class Solution:
+  def insertion(self,arr,n):
+    if n==1:
+      return
+    for i in range (n):
+      arr[i]=key
+      j=i-1
+      while j>=0 and arr[j]>key:
+        arr[j]=arr[j+1]
+        j-=1
+      arr[j+1]=key
+    self.insertion(arr,n-1)
+  return arr
+arr=[5,3,8,1,2]
+obj=Solution()
+print(obj.insertion(arr,5))
+      
