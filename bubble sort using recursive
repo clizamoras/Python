@@ -1,0 +1,13 @@
+class Solution:
+  def bubble(self,arr,n):
+    if n==1:
+      return 
+    for i in range(n):
+      for j in range(n-1-i):
+        if arr[j]>arr[j+1]:
+          arr[j],arr[j+1]=arr[j+1],arr[j]
+    self.bubble(arr,n-1)
+    return arr
+arr=[5,3,8,1,2]
+obj=Solution()
+print(obj.bubble(arr,5))
