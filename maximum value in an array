@@ -1,0 +1,11 @@
+class Solution:
+  def max(self,arr):
+    max=arr[0]
+    n=len(arr)
+    for i in range(n):
+      if (arr[i]>max):
+         max=arr[i]
+    return max
+arr=[35,5,7,3,89]
+obj=Solution()
+print(obj.max(arr))
