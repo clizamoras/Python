@@ -1,3 +1,4 @@
+
 class Solution:
  def dublicate(self,nums,k):
   for i in range(len(nums)):
