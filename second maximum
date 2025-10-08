@@ -1,0 +1,14 @@
+class Solution:
+  def secmax(self,arr):
+    max=arr[0]
+    secmax=arr[0]
+    n=len(arr)
+    for i in range(n):
+      if arr[i]>max:
+        max=arr[i]
+      if arr[i]>secmax and arr[i]<max:
+        secmax=arr[i]
+    return max,secmax
+arr=[1,5,89,4,74,33]
+obj=Solution()
+print(obj.secmax(arr))
