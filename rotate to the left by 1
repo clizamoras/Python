@@ -1,0 +1,12 @@
+class Solution:
+  def rotate(self,arr):
+    a=arr[0]
+    n=len(arr)
+    for i in range(n-1):
+       arr[i]=arr[i+1]
+    arr.remove(n)
+    arr.append(a)
+    return arr
+arr=[1,2,3,4,5]
+obj=Solution()
+print(obj.rotate(arr))
