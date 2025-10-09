@@ -1,0 +1,11 @@
+class Solution:
+  def duplicates(self,arr):
+    a=[]
+    n=len(arr)
+    for i in range(n):
+      if arr[i] not in a:
+        a.append(arr[i])
+    return a
+arr=[1,2,4,6,2,1,4]
+obj=Solution()
+print(obj.duplicates(arr))
