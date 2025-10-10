@@ -1,0 +1,10 @@
+class Solution:
+  def  rotate(self,arr,n,k):
+    if(n=='left'):
+      arr=arr[k:]+arr[:k]
+    if (n=='right'):
+       arr=arr[-k:]+arr[:-k]
+    return arr
+arr=[1,2,3,4,5,6]
+obj=Solution()
+print(obj.rotate(arr))
