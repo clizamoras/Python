@@ -1,0 +1,14 @@
+class Solution:
+   def union(self,num1,num2):
+      n=len(num1)
+      m=len(num2)
+      a=[]
+      for i in range(n):
+        for j in range(m):
+           if(num1[i]==num2[j]):
+               a.append(num[i])
+       return a
+num1=[1,2,3,4,5,6,7]
+num2=[1,2,3,4]
+obj=Solution()
+print(obj.union(num1,num2))
