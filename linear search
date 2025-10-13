@@ -1,0 +1,10 @@
+class Solution:
+   def linear(self,num,val):
+      n=len(arr)
+      for i in range(n):
+        if(arr[i]==val):
+           return i
+       return -1
+arr=[5,4,9,0,8]
+obj=Solution()
+print(obj.linear(arr,5)
