@@ -1,0 +1,12 @@
+class Solution:
+   def missing(self,arr):
+      n=len(arr)
+      flag=0
+      for i in range(n):
+         if(arr[i]+1==arr[i+1]):
+            flag=1
+         else:
+            return arr[i]+1
+  arr=[1,2,4,5]
+  obj=Solution()
+  print(obj.missing(arr))
