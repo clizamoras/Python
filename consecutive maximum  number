@@ -1,0 +1,13 @@
+class Solution:
+   def maximum(self,nums):
+      dir={}
+      for num in nums:
+         if num in dir:
+           dir[num]+=1
+         else:
+           dir[num]=1
+      max_values=max(dir.values())
+      return max_values
+num=[1,,0,0,1,1,1,1]
+obj=Solution()
+print(obj.maximum(nums))
