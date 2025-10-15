@@ -1,0 +1,14 @@
+class Solution:
+  def longest(self,arr,k):
+     n=len(arr)
+     s=0
+     l=0
+     for i in range(n):
+       for j in range(i,n-1):
+          s+=arr[j]
+          if(s==k):
+            l=max(l,j-i+1)
+     return l
+arr=[1,2,3,9,1,5]
+obj=Solution()
+print(obj.longest(arr,10))
