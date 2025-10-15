@@ -1,0 +1,14 @@
+class Solution:
+  def single(self,nums):
+     dir={}
+     n=len(nums)
+     for num in nums:
+       if num in dir:
+         dir[num]+=1
+       else:
+         dir[num]=1
+     min_value=min(dir,key=dir.get)
+     return min_value
+arr=[1,2,4,2,2,1]
+obj=Solution()
+print(obj.single(arr))
