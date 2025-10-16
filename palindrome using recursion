@@ -1,3 +1,4 @@
+
 class Solution:
  def string(self,s):
   n=len(s)
