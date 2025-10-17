@@ -1,3 +1,4 @@
+
 class Solution:
    def zeros(self,arr):
      a=[]
