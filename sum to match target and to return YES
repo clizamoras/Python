@@ -1,0 +1,9 @@
+class Solution:
+   def sum(self,arr,target):
+     n=len(arr)
+     for i in range(n):
+       for j in range(i,n-1):
+         if(arr[i]+arr[j]==target):
+            return "YES",[i,j]
+         else:
+            return "NO"
