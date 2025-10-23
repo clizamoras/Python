@@ -1,0 +1,14 @@
+class Solution:
+  def maxs(self,arr):
+    maxsum=arr[0]
+    currentsum=0
+    for x in arr:
+       currentsum+=x
+       if(currentsum>maxsum):
+          maxsum=currentsum
+       if(currentsum <0):
+          currentsum=0
+    return maxsum
+arr=[1]
+obj=Solution()
+print(obj.maxs(arr))
