@@ -1,3 +1,4 @@
+
 class Solution:
   def single(self,arr):
     n=len(arr)
