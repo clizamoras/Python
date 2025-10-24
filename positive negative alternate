@@ -1,0 +1,19 @@
+class Solution:
+  def posneg(self,arr):
+   pos=[]
+   neg=[]
+   result=[]
+   n=len(arr)
+   for i in range(n):
+     if(arr[i]>0):
+       pos.append(arr[i])
+     else:
+        neg.append(arr[i])
+   m=len(pos)
+   for j in range(m):
+     result.append(pos[j])
+     result.append(neg[j])
+  return result
+arr=[1,2,-4,-5]
+obj=Solution()
+print(obj.posheg(arr))
