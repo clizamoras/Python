@@ -1,0 +1,14 @@
+class Solution:
+  def cons(self,arr):
+     n=len(arr)
+     set=[]
+       long=0
+     for i in range(n):
+        set.append(arr[i])
+        for num in set:
+          for num-1 in set:
+             long+=1
+     return long+1
+arr=[100,200,3,2,1,4]
+obj+solution()
+print(obj.cons(arr))
