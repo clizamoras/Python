@@ -1,3 +1,4 @@
+
 class Solution:
  def insertion(self,arr):
    n=len(arr)
