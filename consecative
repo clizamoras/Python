@@ -1,3 +1,4 @@
+
 class Solution:
   def cons(self,arr):
      n=len(arr)
