@@ -1,3 +1,4 @@
+
 class Solution:
   def bus(self,arr):
     n=len(arr)
