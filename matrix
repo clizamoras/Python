@@ -1,3 +1,4 @@
+
 class Solution:
   def zeros(self,matrix):
      rows=len(matrix)
