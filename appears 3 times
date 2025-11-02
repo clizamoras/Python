@@ -1,3 +1,4 @@
+
 class Solution:
   def vector(self,arr):
     result=[]
