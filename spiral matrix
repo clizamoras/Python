@@ -1,3 +1,4 @@
+
 class Solution:
   def spiral(self,matrix):
     rows=len(matrix)
