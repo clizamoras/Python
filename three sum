@@ -1,3 +1,4 @@
+
 class Solution:
       def Sum(self,arr):
           n=len(arr)
