@@ -1,3 +1,4 @@
+
 class Solution:
   def rotate(self,arr):
     a=arr[0]
