@@ -1,0 +1,13 @@
+class Solution:
+  def intervasion(self,nums):
+    n=len(nums)
+    s=[]
+    for i in range(n):
+      for j in range(i,n):
+        if(nums[i]>nums[j]):
+           s.append((nums[i],[nums[j]))
+     m=len(s)
+     return m
+nums=[3,1,2]
+obj=Solution()
+print(obj.intervasion(nums))
