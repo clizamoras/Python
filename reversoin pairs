@@ -1,0 +1,12 @@
+class Solution:
+  def reversion(self,nums):
+        n=len(nums)
+        s=[]
+        for i in range(n):
+            for j in range(i,n):
+                    if(nums[i] > 2*nums[j]):
+                        s.append((nums[i],nums[j]))
+        return s
+nums=[3,2,1,4]
+obj=Solution()
+print(obj.reversion(nums))
