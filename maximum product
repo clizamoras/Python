@@ -1,0 +1,11 @@
+class Solution:
+  def product(self,arr):
+    n=len(arr)
+    s=[]
+    for i in range(n-1):
+       s.append((arr[i]*arr[i+1]))
+    m=max(s)
+    return s
+arr=[1,2,3,4,5,0]
+obj=Solution()
+print(obj.product(arr))
