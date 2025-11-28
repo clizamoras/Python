@@ -1,0 +1,10 @@
+class Solution:
+  def binary(self,nums,target):
+     n=len(nums)
+     for i in range(n):
+        if(nums[i]==target):
+           return i
+     return -1
+obj=Solution()
+nums=[-1,0,3,5,9,12]
+print(obj.binary(nums,9))
