@@ -1,0 +1,14 @@
+class Solution:
+    def insert(self,nums,x):
+        n=len(nums)
+        if x not in nums:
+            for i in range(n-1):
+                if nums[i]<x and x<nums[i+1]:
+                    return i+1
+        else:
+            for i in range(n):
+                if nums[i]==x:
+                    return i
+nums=[1,2,4,7]
+obj=Solution()
+print(obj.insert(nums,2))
