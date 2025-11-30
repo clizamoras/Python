@@ -1,3 +1,4 @@
+
 class Solution:
 def power(self,n):
  if n<1:
