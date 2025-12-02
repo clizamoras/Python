@@ -1,0 +1,19 @@
+class Solution:
+  def floor(self,arr,x):
+    n=len(arr)
+    s=[]
+    l=[]
+    if x in arr:
+      return(x,x)
+    for i in range(n):
+      if arr[i]<x:
+        s.append(arr[i])
+    m=max(s)
+    for i in range(n):
+      if arr[i]>x:
+        l.append(arr[i])
+    mm=min(l)
+    return(m,mm)
+arr=[3, 4, 4, 7, 8, 10]
+obj=Solution()
+print(floor(arr,5))
