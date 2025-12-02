@@ -1,3 +1,4 @@
+
 class Solution:
   def product(self,arr):
     n=len(arr)
