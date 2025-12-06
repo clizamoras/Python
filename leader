@@ -1,4 +1,5 @@
 
+
 class Solution:
   def lead(self,arr):
      result=[]
