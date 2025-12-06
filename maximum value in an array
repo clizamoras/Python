@@ -1,3 +1,4 @@
+
 class Solution:
   def max(self,arr):
     max=arr[0]
