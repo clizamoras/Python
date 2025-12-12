@@ -1,4 +1,5 @@
 
+
 class Solution:
   def longest(self,arr,k):
      n=len(arr)
