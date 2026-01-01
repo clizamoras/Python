@@ -1,3 +1,4 @@
+
 class Solution:
   def occurence(self,arr,t):
     n=len(arr)
