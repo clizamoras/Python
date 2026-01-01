@@ -1,4 +1,3 @@
-
 class Solution:
   def insertion(self,arr,n):
     if n==1:
