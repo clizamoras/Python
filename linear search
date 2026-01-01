@@ -1,5 +1,3 @@
-
-
 class Solution:
    def linear(self,num,val):
       n=len(arr)
