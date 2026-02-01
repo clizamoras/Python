@@ -1,4 +1,3 @@
-
 class Solution:
   def intervasion(self,nums):
     n=len(nums)
