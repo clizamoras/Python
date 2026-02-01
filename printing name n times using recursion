@@ -1,4 +1,3 @@
-
 class Solution:
  def name(self,n):
   if(n==0):
