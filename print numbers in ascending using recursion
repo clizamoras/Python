@@ -1,4 +1,3 @@
-
 class Solution:
  def printnumbers(self,n):
   if n==0:
