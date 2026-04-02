@@ -1,6 +1,5 @@
 
-def greet(name,age):
- print(name)
+def greet(name,age): print(name)
  print(age)
 greet('helen',12)
 def add(a,*b):
