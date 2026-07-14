@@ -1,3 +1,4 @@
+
 class Solution:
   def floor(self,arr,x):
     n=len(arr)
