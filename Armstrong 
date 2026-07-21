@@ -1,0 +1,9 @@
+num=int(input("Enter a number"))
+n=len(str(num))
+s=0
+for i in str(num):
+    s=s+pow(int(i),n)
+if s==num:
+    print("Armstrong")
+else:
+    print("no")
