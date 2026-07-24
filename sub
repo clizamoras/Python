@@ -1,0 +1,4 @@
+import re
+text='He is playing'
+result=re.sub('He','She',text)
+print(result)
