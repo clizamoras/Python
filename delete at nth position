@@ -1,0 +1,27 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def delete(self,head,pos):
+        count=0
+        current=head
+        while(count!=pos-1):
+            current=current.next
+            count=count+1
+        current.next=current.next.next
+        return head
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(30)
+obj=Solution()
+print("Before deletion:")
+obj.printlist(head)
+pos=int(input("Enter the position:"))
+head=obj.delete(head,pos)
+print("After deletion:")
+obj.printlist(head)
