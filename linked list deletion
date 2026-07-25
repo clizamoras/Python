@@ -1,0 +1,65 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def atbegin(self,head):
+        current=head.next
+        current.next=head.next.next
+        return current
+    
+    def atpos(self,head,pos):
+        if pos==0:
+            current=head.next
+            current.next=head.next.next
+            return current
+        else:
+            count=0
+            current=head
+            while(count!=pos-1):
+                current=current.next
+                count=count+1
+            current.next=current.next.next
+            return head
+    
+    def atend(self,head):
+        current=head
+        while(current.next.next!=None):
+            current=current.next
+        current.next=None
+        return head
+    
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+    
+
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(30)
+head.next.next.next=Node(40)
+choice=int(input("Enter your choice:   1.delete at the begining  2.delete at nth position  3.delete at the end"))
+obj=Solution()
+if choice==1:
+    print("Before deletion:")
+    obj.printlist(head)
+    head=obj.atbegin(head)
+    print("After deletion:")
+    obj.printlist(head)
+elif choice==2:
+    print("Before deletion:")
+    obj.printlist(head)
+    pos=int(input("Enter the position"))
+    head=obj.atpos(head,pos)
+    print("After deletion:")
+    obj.printlist(head)
+elif choice==3:
+    print("Before deletion:")
+    obj.printlist(head)
+    head=obj.atend(head)
+    print("After deletion:")
+    obj.printlist(head)
+else:
+    print("Invalid choice")
+        
