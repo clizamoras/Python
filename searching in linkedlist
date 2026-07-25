@@ -1,0 +1,24 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def search(self,head,elem):
+        while(head):
+            if head.data==elem:
+                return True
+            else:
+                head=head.next
+        return False
+    def printlist(self,head):
+        while(head):
+            print(head.data,end=" ")
+            head=head.next
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(30)
+head.next.next.next=Node(40)
+obj=Solution()
+elem=int(input("Enter the number to be searched "))
+obj.printlist(head)
+print(obj.search(head,elem))
