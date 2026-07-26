@@ -1,0 +1,19 @@
+n=int(input("Enter the number"))
+s=[]
+for num in range(n+1):
+    if num>1:
+        for i in range(2,num):
+            if num%i==0:
+                break
+        else:
+            s.append(num)
+m=len(s)
+k=[]
+for i in range(m):
+    for j in range(i+1,m):
+        if s[i]+s[j]==n:
+            k.append((s[i],s[j]))
+if len(k)>0:
+    print(k)
+else:
+    print("Not found")
