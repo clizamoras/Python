@@ -1,0 +1,10 @@
+import re
+text='John , is playing outside along with his  6 friends'
+result=re.split('\s',text)
+print(result)
+for y in result:
+    print(y)
+result=re.split(',',text)
+print(result)
+result2=re.split('\d',text)
+print(result2)
