@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def middle(self,head):
+        current=head
+        count=0
+        while(current.next!=None):
+            current=current.next
+            count=count+1
+        temp=count+1
+        tem=int((count/2))
+        cur=head
+        c=0
+        while(c!=tem):
+            cur=cur.next
+            c=c+1
+        return cur.data
+    def printlist(self,head):
+        while(head):
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(30)
+obj.printlist(head)
+print(obj.middle(head))
