@@ -1,0 +1,27 @@
+class Node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+class Solution:
+    def reverse(self,head):
+      stack=[]
+      temp=head
+      while temp:
+        stack.append(temp.val)
+        temp=temp.next
+      temp=head
+      while temp:
+        temp.val=stack.pop()
+        temp=temp.next
+      return head
+            
+    def printlist(self,head):
+        while(head):
+            print(head.val,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(10)
+head.next=Node(20)
+head.next.next=Node(30)
+obj.reverse(head)
+obj.printlist(head)
