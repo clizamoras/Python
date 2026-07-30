@@ -1,0 +1,38 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def oddeven(self,head):
+        current=head
+        evenhead=oddhead=None
+        eventail=oddtail=None
+        while current:
+            if current.data%2!=0:
+                new_node=Node(current.data)
+                if oddhead is None:
+                    oddhead=oddtail=new_node
+                else:
+                    oddtail.next=new_node
+                    oddtail=new_node
+            else:
+                new_node=Node(current.data)
+                if evenhead is None:
+                    evenhead=eventail=new_node
+                else:
+                    eventail.next=new_node
+                    eventail=new_node
+            current=current.next
+        return oddhead,evenhead
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(10)
+head.next=Node(15)
+head.next.next=Node(20)
+head.next.next.next=Node(25)
+oddhead,evenhead=obj.oddeven(head)
+obj.printlist(oddhead)
+obj.printlist(evenhead)
