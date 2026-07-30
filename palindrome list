@@ -1,0 +1,35 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def palindrome(self,head):
+        stack=[]
+        temp=head
+        while temp:
+            stack.append(temp.data)
+            temp=temp.next
+        temp=head
+        while temp:
+            if temp.data!= stack[-1]:
+                return False
+            stack.pop()
+            temp=temp.next
+        return True
+        
+    def printlist(self,head):
+        while(head):
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(3)
+first=Node(7)
+second=Node(5)
+third=Node(7)
+fourth=Node(5)
+head.next=first
+first.next=second
+second.next=third
+third.next=fourth
+print(obj.palindrome(head))
+obj.printlist(head)
