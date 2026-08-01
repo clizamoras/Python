@@ -1,0 +1,62 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Solution:
+    def sort(self,head1,head2):
+        curr=head1
+        stack=[]
+        while curr:
+            stack.append(curr.data)
+            curr=curr.next
+        curr=head1
+        while curr:
+            curr.data=stack.pop()
+            curr=curr.next
+        cur=head2
+        st=[]
+        while cur:
+            st.append(cur.data)
+            cur=cur.next
+        cur=head2
+        while cur:
+            cur.data=st.pop()
+            cur=cur.next
+        resulthead=resulttail=None
+        carry=0
+        curr=head1
+        cur=head2
+        while curr and cur:
+            sum=curr.data+cur.data+carry
+            new_digit=sum%10
+            carry=sum//10
+            curr=curr.next
+            cur=cur.next
+            new_node=Node(new_digit)
+            if resulthead is None:
+                resulthead=new_node
+                resulttail=new_node
+            else:
+                resulttail.next=new_node
+                resulttail=new_node
+        return resulthead
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+
+head1=Node(6)
+first=Node(1)
+second=Node(7)
+
+head1.next=first
+first.next=second
+
+head2=Node(2)
+a=Node(9)
+c=Node(5)
+head2.next=a
+a.next=c
+head=obj.sort(head1,head2)
+obj.printlist(head)
