@@ -1,3 +1,4 @@
+
 class Solution:
   def binary(self,nums,target):
      n=len(nums)
