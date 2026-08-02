@@ -1,0 +1,43 @@
+class Node:
+    def __init__(self,data,prev=None,next=None):
+        self.data=data
+        self.prev=prev
+        self.next=next
+class Solution:
+    def sum(self,head,t):
+        left=head
+        l=[]
+        current=head
+        while current.next!=None:
+            current=current.next
+        right=current
+        while left!=right and left.prev!=right:
+            if left.data+right.data==t:
+                l.append((left.data,right.data))
+                left=left.next
+                right=right.prev
+            elif left.data+right.data<t:
+                left=left.next
+            else:
+                right=right.prev
+        return l
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(1)
+first=Node(2)
+second=Node(3)
+third=Node(4)
+fourth=Node(5)
+head.next=first
+first.prev=head
+first.next=second
+second.prev=first
+second.next=third
+third.prev=second
+third.next=fourth
+fourth.prev=third
+t=int(input("Enter the number"))
+print(obj.sum(head,t))
