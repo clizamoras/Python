@@ -1,0 +1,43 @@
+class Node:
+    def __init__(self,data,prev=None,next=None):
+        self.data=data
+        self.prev=prev
+        self.next=next
+class Solution:
+    def duplicates(self,head):
+        current=head
+        if head.data==head.next.data:
+            current=head.next
+            current.prev=None
+            head=current
+        while current and current.next:
+            if current.data==current.next.data:
+                if current is None:
+                    return head
+                if current.prev is not None:
+                    current.prev.next=current.next
+                if current.next is not None:
+                    current.next.prev=current.prev
+            current=current.next
+        return head
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(1)
+first=Node(1)
+second=Node(3)
+third=Node(3)
+fourth=Node(5)
+head.next=first
+first.prev=head
+first.next=second
+second.prev=first
+second.next=third
+third.prev=second
+third.next=fourth
+fourth.prev=third
+
+head=obj.duplicates(head)
+obj.printlist(head)
