@@ -1,0 +1,45 @@
+class Node:
+    def __init__(self,data,prev=None,next=None):
+        self.data=data
+        self.prev=prev
+        self.next=next
+class Solution:
+    def target(self,head,t):
+        current=head
+        if (head.data==t):
+            current=head.next
+
+            current.prev=None
+            return current
+        else:
+          while current:
+            if current.data==t:
+                if current is None:
+                    return head
+                if current.prev is not None:
+                    current.prev.next=current.next
+                if current.next is not None:
+                    current.next.prev=current.prev
+            current=current.next
+        return head
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(1)
+first=Node(2)
+second=Node(3)
+third=Node(1)
+fourth=Node(4)
+head.next=first
+first.prev=head
+first.next=second
+second.prev=first
+second.next=third
+third.prev=second
+third.next=fourth
+fourth.prev=third
+t=int(input("Enter the number you want to delete"))
+head=obj.target(head,t)
+obj.printlist(head)
