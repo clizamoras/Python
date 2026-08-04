@@ -1,0 +1,57 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+    
+class Solution:
+    def reverse(self,head,k):
+        current=head
+        new_head=None
+        previous=None
+        
+        while current:
+            temp=current
+            count=0
+            while temp and count<k:
+                temp=temp.next
+                count=count+1
+            
+            if count<k:
+                if previous:
+                    previous.next=current
+                break
+            
+            first=current
+            prev=None
+            for i in range(k):
+                next_node=current.next
+                current.next=prev
+                prev=current
+                current=next_node
+            
+            if new_head is None:
+                new_head=prev
+            
+            if previous:
+                previous.next=prev
+            
+            previous=first
+        return new_head
+       
+    def printlist(self,head):
+        while head:
+            print(head.data,end=" ")
+            head=head.next
+obj=Solution()
+head=Node(1)
+first=Node(2)
+second=Node(3)
+third=Node(4)
+fourth=Node(5)
+head.next=first
+first.next=second
+second.next=third
+third.next=fourth
+k=int(input("Enter the value"))
+head=obj.reverse(head,k)
+obj.printlist(head)
