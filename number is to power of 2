@@ -1,0 +1,14 @@
+class Solution:
+    def binary(self,num):
+        l=[]
+        for i in range(num):
+            if pow(2,i)==num:
+                l.append(i)
+        n=len(l)
+        if n>0:
+            return True
+        else:
+            return False
+obj=Solution()
+num=int(input("Enter the number"))
+print(obj.binary(num))
