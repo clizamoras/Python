@@ -1,0 +1,22 @@
+class Solution:
+    def set(self,a,b):
+        x=a^b
+        l=[]
+        q=x
+        while(q!=0):
+            r=q%2
+            l.append(r)
+            q=int(q/2)
+        n=len(l)
+        s=""
+        for i in range(n-1,-1,-1):
+            s=s+str(l[i])
+        count=0
+        for i in s:
+            if i=='1':
+                count=count+1
+        return count
+obj=Solution()
+a=int(input("Enter the number"))
+b=int(input("Enter the number"))
+print(obj.set(a,b))
