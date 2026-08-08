@@ -1,0 +1,15 @@
+class Solution:
+    def numbers(self,a):
+        d={}
+        n=len(a)
+        for i in range(n):
+            if a[i] in d:
+                d[a[i]]+=1
+            else:
+                d[a[i]]=1
+        for i in d:
+            if d[i]==1:
+                return i
+obj=Solution()
+a=[4,1,2,1,2]
+print(obj.numbers(a))
