@@ -1,0 +1,15 @@
+class Solution:
+    def atoi(self,s,i,sign,num):
+        if i<len(s) and s[i]==" ":
+            return self.atoi(s,i+1,sign,num)
+        if i<len(s) and (s[i]=='+'or s[i]=='-'):
+            if s[i]=='-':
+                sign=-1
+            return self.atoi(s,i+1,sign,num)
+        if i>=len(s) or not s[i].isdigit():
+            return num*sign
+        num=num*10+int(s[i])
+        return self.atoi(s,i+1,sign,num)
+obj=Solution()
+s=input("Enter the string")
+print(obj.atoi(s,i=0,sign=1,num=0))
