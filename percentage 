@@ -1,0 +1,25 @@
+class PercentageError(Exception):
+   pass
+class InvalidPercentage(PercentageError):
+    def __init__(self):
+        super().__init__("Invalid Percentage")
+class LessPercentage(PercentageError):
+    def __init__(self):
+        super().__init__("Percentage lesser than cutoff please try again ")
+class checkPercentage(PercentageError):
+    def __init__(self,per):
+        if per<80:
+            raise LessPercentage
+        if per>100:
+            raise InvalidPercentage
+        print("Congrajulations")
+try:
+    print("For percentage:92")
+    checkPercentage(92)
+except Exception as e:
+    print(e)
+try:
+    print("For percentage :58")
+    checkPercentage(58)
+except Exception as e:
+    print(e)
