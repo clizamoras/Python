@@ -1,0 +1,15 @@
+class Solution:
+    def string(self,s,current,index,ans):
+        if index==len(s):
+            ans.append(current)
+            return
+        self.string(s,current+s[index],index+1,ans)
+        self.string(s,current,index+1,ans)
+
+obj=Solution()
+s=input("Enter the string")
+current=""
+index=0
+ans=[]
+obj.string(s,current,index,ans)
+print(ans)
