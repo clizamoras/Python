@@ -1,0 +1,17 @@
+class Solution:
+    def parenthesis(self,n,current,open,close,ans):
+        if len(current)==2*n:
+            ans.append(current)
+            return
+        if open<n:
+            self.parenthesis(n,current+'(',open+1,close,ans)
+        if close<open:
+            self.parenthesis(n,current+')',open,close+1,ans)
+obj=Solution()
+n=int(input("Enter the number"))
+current=""
+open=0
+close=0
+ans=[]
+obj.parenthesis(n,current,open,close,ans)
+print(ans)
