@@ -1,0 +1,16 @@
+class Solution:
+    def binary(self,n,current,ans):
+        if n==len(current):
+            ans.append(current)
+            return
+        
+        self.binary(n,current+'0',ans)
+
+        if current=="" or current[-1]!='1':
+            self.binary(n,current+'1',ans)
+obj=Solution()
+n=int(input("Enter the number"))
+current=""
+ans=[]
+obj.binary(n,current,ans)
+print(ans)
