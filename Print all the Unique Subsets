@@ -1,0 +1,20 @@
+class Solution:
+    def subset(self,a,index,current,ans):
+        if index==len(a):
+            ans.add(tuple(current))
+            return
+        current.append(a[index])
+        self.subset(a,index+1,current,ans)
+        current.pop()
+        self.subset(a,index+1,current,ans)
+obj=Solution()
+a=[1,2,2]
+index=0
+current=[]
+ans=set()
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i]>a[j]:
+            a[i],a[j]=a[j],a[i]
+obj.subset(a,index,current,ans)
+print(ans)
