@@ -1,0 +1,20 @@
+class Solution:
+    def sum(self,n,k,current,ans,index):
+        if n==0 and k==0:
+            ans.append(current.copy())
+            return
+        if n==0 or k<0 or index>9:
+            return
+        if index<=9:
+            current.append(index)
+            self.sum(n-index,k-1,current,ans,index+1)
+            current.pop()
+        self.sum(n,k,current,ans,index+1)
+obj=Solution()
+n=int(input("Enter the number"))
+k=int(input("Enter the number"))
+index=1
+current=[]
+ans=[]
+obj.sum(n,k,current,ans,index)
+print(ans)
