@@ -1,0 +1,19 @@
+class Solution:
+    def sum(self,num,current,ans,index,k):
+        if index==len(num):
+            if k==0:
+                ans.append(current.copy())
+            return
+        if num[index]<=k:
+            current.append(num[index])
+            self.sum(num,current,ans,index,k-num[index])
+            current.pop()
+        self.sum(num,current,ans,index+1,k)
+obj=Solution()
+num=[2,3,6,7]
+k=int(input("Enter the number"))
+current=[]
+ans=[]
+index=0
+obj.sum(num,current,ans,index,k)
+print(ans)
