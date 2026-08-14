@@ -1,0 +1,23 @@
+class Time:
+    def __init__(self,h=0,m=0,s=0):
+        self.h=h
+        self.m=m
+        self.s=s
+        self.m+=self.s//60
+        self.s=self.s%60
+        self.h+=self.m//60
+        self.m=self.m%60
+        self.h=self.h%24
+    def __str__(self):
+        return f"{self.h:02},{self.m:02},{self.s:02}"
+    def add(self,other):
+        nh=self.h+other.h
+        nm=self.m+other.m
+        ns=self.s+other.s
+        return Time(nh,nm,ns)
+t1=Time(10,45,30)
+t2=Time(2,20,50)
+t3=t1.add(t2)
+print("t1:",t1)
+print("t2:",t2)
+print("t3:",t3)
