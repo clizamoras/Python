@@ -1,0 +1,32 @@
+class Solution:
+    def exist(self,grid,n,ans):
+        if grid[0][0]==0:
+            return ans
+        def search(i,j,path):
+            if i==n-1 and j==n-1:
+                ans.append(path)
+                return
+            if i-1<n and grid[i-1][j]==1:
+                grid[i][j]=0
+                search(i-1,j,path+"U")
+                grid[i][j]=1
+            if i+1<n and grid[i+1][j]==1:
+                grid[i][j]=0
+                search(i+1,j,path+"D")
+                grid[i][j]=1
+            if j-1<n and grid[i][j-1]==1:
+                grid[i][j]=0
+                search(i,j-1,path+"L")
+                grid[i][j]=1
+            if j+1<n and grid[i][j+1]==1:
+                grid[i][j]=0
+                search(i,j+1,path+"R")
+                grid[i][j]=1
+        search(0,0,"")
+        return ans
+obj=Solution()
+grid = [ [1, 0, 0, 0] , [1, 1, 0, 1], [1, 1, 0, 0], [0, 1, 1, 1] ]
+n=4
+ans=[]
+obj.exist(grid,n,ans)
+print(ans)
