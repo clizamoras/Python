@@ -1,0 +1,35 @@
+class Solution:
+    def exist(self,board,word):
+        rows=len(board)
+        cols=len(board[0])
+        def search(row,col,index):
+            if index==len(word):
+                return True
+            if row>=rows or row<0:
+                return False
+            if col>=cols or col<0:
+                return False
+            if board[row][col]!=word[index]:
+                return False
+            temp=board[row][col]
+            board[row][col]='#'
+            found=(
+                search(row-1,col,index+1) or
+                search(row+1,col,index+1) or
+                search(row,col-1,index+1) or
+                search(row,col+1,index+1)
+            )
+            board[row][col]=temp
+            return found
+        for row in range(rows):
+            for col in range(cols):
+               if search(row,col,0):
+                return True
+        return False
+obj=Solution()
+board= [["A", "B", "C", "E"], ["S", "F", "C", "S"],["A", "D", "E", "E"]]
+word="ABCCED"
+print(obj.exist(board,word))
+
+
+
