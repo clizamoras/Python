@@ -1,0 +1,18 @@
+class Solution:
+    def palindrome(self,s,index,current,ans):
+        if len(s)==index:
+            ans.append(current.copy())
+            return
+        for j in range(index,len(s)):
+            sub=s[index:j+1]
+            if sub==sub[::-1]:
+                current.append(sub)
+                self.palindrome(s,index+1,current,ans)
+                current.pop()
+obj=Solution()
+s=input("Enter the string")
+index=0
+current=[]
+ans=[]
+obj.palindrome(s,index,current,ans)
+print(ans)
