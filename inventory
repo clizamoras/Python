@@ -1,0 +1,15 @@
+def inven(inv):
+    total=0
+    for k,v in inv.items():
+        print(v,k)
+        total+=inv.get(k,0)
+    print("total:",total)
+    return total
+def add(inv,items):
+    for k in items:
+        inv[k]=inv.get(k,0)+1
+inv={'arrow':12,'gold coin':42,'rope':1,'torch':6,'dagger':1}
+items=['gold coin','gold coin','dagger','gold coin','ruby']
+inven(inv)
+add(inv,items)
+inven(inv)
