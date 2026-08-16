@@ -1,0 +1,11 @@
+a={'Alice':{'apples':5,'pretzels':12},
+   'Bob':{'hamsandwitches':3,'apples':2},
+   'Carol':{'cups':3,'applepies':1}}
+def t(a,items):
+    n=0
+    for k,v in a.items():
+        n=n+v.get(items,0)
+    return n
+print("Apples:"+str(t(a,'apples')))
+print("Cups:"+str(t(a,'cups')))
+print("Applepies:"+str(t(a,'applepies')))
