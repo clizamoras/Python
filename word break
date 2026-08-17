@@ -1,0 +1,14 @@
+class Solution:
+    def wordbreak(self,s,d,index):
+        if index==len(s):
+            return True
+        for i in range(index+1,len(s)+1):
+            word=s[index:i]
+            if word in d:
+                return True
+        return False
+obj=Solution()
+s= "takeuforward" 
+d=["take" , "forward" , "you", "u"]
+index=0
+print(obj.wordbreak(s,d,index))
