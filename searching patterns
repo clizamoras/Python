@@ -1,0 +1,10 @@
+import re
+p=input("enter the string")
+s=input("enter the string")
+result=re.search(p,s)
+if result:
+    print(result)
+    print("search found")
+    print("Starting index",result.start())
+    print("Ending index",result.end())
+    print("Starting and ending index",result.span())
