@@ -1,0 +1,15 @@
+n=int(input("Enter the number"))
+s=[]
+for i in range(n):
+    num=int(input("Enter the number"))
+    s.append(num)
+print(s)
+su=0
+p=1
+for i in s:
+    if i%2==0:
+        su=su+i
+    else:
+        p*=i
+print("Sum:",su)
+print("Product:",p)
