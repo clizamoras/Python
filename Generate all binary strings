@@ -1,3 +1,4 @@
+
 class Solution:
     def binary(self,n,current,ans):
         if n==len(current):
