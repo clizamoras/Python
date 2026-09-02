@@ -23,7 +23,7 @@ class Solution:
         return self.queue[self.f]
     
     def isEmpty(self):
-        return self.r==-1 and self.f==-1
+        return self.f>self.r
 
     def printqueue(self):
         temp=self.f
