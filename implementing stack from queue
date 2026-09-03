@@ -1,0 +1,36 @@
+class Solution:
+
+    def __init__(self):
+        self.queue=[]
+    
+    def push(self,x):
+        n=len(self.queue)
+        self.queue.append(x)
+        for i in range(n):
+            self.queue.append(self.queue.pop(0))
+        
+    def pop(self):
+        return self.queue.pop(0)
+    
+    def peek(self):
+        return self.queue[0]
+    
+    def isEmpty(self):
+        return len(self.queue)==0
+    
+    def printqueue(self):
+        n=len(self.queue)
+        for i in range(n):
+            print(self.queue[i])
+    
+obj=Solution()
+obj.push(10)
+obj.push(20)
+obj.push(30)
+obj.printqueue()
+obj.pop()
+obj.printqueue()
+print(obj.peek())
+print(obj.pop())
+obj.pop()
+print(obj.isEmpty())
