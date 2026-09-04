@@ -1,0 +1,29 @@
+class Node:
+  def __init__(self,data):
+    self.data=data
+    self.next=None
+class Solution:
+  def __init__(self):
+    self.top=None
+  def push(self,x):
+    newnode=Node(x)
+    newnode.next=self.top
+    self.top=newnode
+  def pop(self):
+    temp=self.top.data
+    self.top=self.top.next
+    return temp
+  def peek(self):
+    return self.top.data
+  def isEmpty(self):
+    return self.top is None
+  def printstack(self):
+    temp=self.top
+    while(temp is not None):
+      print(temp.data)
+      temp=temp.next
+obj=Solution()
+obj.push(10)
+obj.push(20)
+obj.push(30)
+obj.printstack()
