@@ -1,0 +1,34 @@
+class Node:
+  def __init__(self,data):
+    self.data=data
+    self.next=None
+class Solution:
+  def __init__(self):
+    self.rear=None
+    self.front=None
+  def push(self,x):
+    newnode=Node(x)
+    if self.front is None and self.rear is None:
+      self.rear=newnode
+      self.front=newnode
+    else:
+      self.rear.next=newnode
+      self.rear=newnode
+  def pop(self):
+    temp=self.front.data
+    self.front=self.front.next
+    return temp
+  def peek(self):
+    return self.front.data
+  def isEmpty(self):
+    return self.front is None
+  def printqueue(self):
+    temp=self.front
+    while(temp is not None):
+      print(temp.data)
+      temp=temp.next
+obj=Solution()
+obj.push(10)
+obj.push(20)
+obj.push(30)
+obj.printqueue()
