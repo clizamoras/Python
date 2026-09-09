@@ -1,0 +1,42 @@
+class Solution:
+  def __init__(self):
+    self.st=[]
+    self.top=-1
+    self.s=[]
+    self.t=-1
+  def push(self,val):
+    if self.isEmpty():
+      self.st.append(val)
+      self.s.append(val)
+      self.top+=1
+      self.t+=1
+    elif val<self.s[self.t]:
+      self.s.append(val)
+      self.st.append(val)
+      self.t+=1
+      self.top+=1
+    else:
+      self.st.append(val)
+      self.top+=1
+  def pop(self):
+    x=self.st[self.top]
+    self.st.pop()
+    if x==self.s[self.t]:
+      self.s.pop()
+      self.t-=1
+    self.top-=1
+    return x
+  def peek(self):
+    return self.st[self.top]
+  def isEmpty(self):
+    return self.top==-1
+  def getmin(self):
+    return self.s[self.t]
+obj=Solution()
+obj.push(10)
+obj.push(20)
+obj.push(30)
+print(obj.getmin())
+obj.pop()
+print(obj.getmin())
+     
