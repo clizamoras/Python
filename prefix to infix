@@ -1,0 +1,32 @@
+class Solution:
+
+  def __init__(self):
+    self.stack=[]
+    self.top=-1
+
+  def pop(self):
+    x=self.stack[self.top]
+    self.stack.pop()
+    self.top-=1
+    return x
+
+  def prefix(self,s):
+    for i in s:
+      if i!='^' and i!='*' and i!='/' and i!='+' and i!='-':
+        self.stack.append(i)
+        self.top+=1
+      else:
+        p=''
+        x=self.stack[self.top]
+        self.pop()
+        y=self.stack[self.top]
+        self.pop()
+        p='('+x+i+y+')'
+        self.stack.append(p)
+        self.top+=1
+    return self.stack[self.top]
+obj=Solution()
+s=input('Enter the string')
+p=s[::-1]
+print(obj.prefix(p))
+        
