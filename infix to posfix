@@ -1,0 +1,51 @@
+class Solution:
+
+  def __init__(self):
+    self.stack=[]
+    self.top=-1
+
+  def isEmpty(self):
+    return self.top==-1
+
+  def pop(self):
+    x=self.stack[self.top]
+    self.stack.pop()
+    self.top-=1
+    return x
+
+  def p(self,op):
+    if op=='^':
+      return 3
+    elif op=='*' or op=='/':
+      return 2
+    elif op=='-'or op=='+':
+      return 1
+    else:
+      return 0
+  def infix(self,s,p):
+    for i in s:
+      if i!='^' and i!='*' and i!='/' and i!='+' and i!='-' and i!='(' and i!=')':
+        p=p+i
+      else:
+        if i=='(':
+          self.stack.append(i)
+          self.top+=1
+        elif self.isEmpty():
+          self.stack.append(i)
+          self.top+=1
+        elif i==')':
+          while(self.stack[self.top]!='('):
+            p=p+self.pop()
+          self.pop()
+        else:
+          while not self.isEmpty() and self.p(self.stack[self.top])>=self.p(i):
+            p=p+self.pop()
+          self.stack.append(i)
+          self.top+=1
+    return p
+    
+obj=Solution()
+s=input("Enter the string")
+p=""
+print(obj.infix(s,p))
+          
