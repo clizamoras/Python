@@ -1,3 +1,4 @@
+
 class Solution:
     def graph(self,g,m):
         n=len(g)
