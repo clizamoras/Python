@@ -1,0 +1,27 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+
+  def result(self,s):
+    for i in s:
+      if i!='^' and i!='/' and i!='*' and i!='+' and i!='-':
+        self.s.append(i)
+        self.t+=1
+      else:
+        x=self.pop()
+        y=self.pop()
+        z=i+y+x
+        self.s.append(z)
+        self.t+=1
+    return self.s[self.t]
+obj=Solution()
+s=input("Enter the string")
+
+print(obj.result(s))
