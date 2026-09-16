@@ -1,0 +1,52 @@
+class Solution:
+
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+
+  def isEmpty(self):
+    return self.t==-1
+  def p(self,op):
+    if op=='^':
+      return 3
+    elif op=='*' or op=='/':
+      return 2
+    elif op=='+' or op=='-':
+      return 1
+    else:
+      return 0
+  def result(self,s,l):
+    for i in s:
+      if i!='^' and i!='/' and i!='*' and i!='+' and i!='-':
+        l=l+i
+      else:
+        if i=='(':
+          self.s.append(i)
+          self.top+=1
+        elif i==')':
+          while(self.s[self.t]!='('):
+            l=l+self.pop()
+          self.pop()
+        elif self.isEmpty():
+          self.s.append(i)
+          self.t+=1
+        else:
+          while not self.isEmpty() and self.p(self.s[self.t])>self.p(i):
+            l=l+self.pop()
+          self.s.append(i)
+          self.t+=1
+    while(not self.isEmpty()):
+      l=l+self.pop()
+    m=l[::-1]
+    return m
+obj=Solution()
+s=input("Enter the string")
+p=s[::-1]
+l=""
+print(obj.result(p,l))
