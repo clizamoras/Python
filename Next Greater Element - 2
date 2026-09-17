@@ -1,0 +1,29 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def isEmpty(self):
+    return self.t==-1
+  def result(self,a):
+    n=len(a)
+    r=[-1]*n
+    for i in range(2*n-1,-1,-1):
+      ind=i%n
+      while (not self.isEmpty()) and self.s[self.t]<=a[ind]:
+        self.pop()
+      if self.isEmpty():
+        r[ind]=-1
+      else:
+        r[ind]=self.s[self.t]
+      self.s.append(a[ind])
+      self.t+=1
+    return r
+obj=Solution()
+a=[3, 10, 4, 2, 1, 2, 6, 1, 7, 2, 9]
+print(obj.result(a))
+    
