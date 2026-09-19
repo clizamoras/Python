@@ -1,6 +1,7 @@
 class Solution:
     def sum(self,n,k,current,ans,index):
         if n==0 and k==0:
+        
             ans.append(current.copy())
             return
         if n==0 or k<0 or index>9:
