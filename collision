@@ -1,0 +1,32 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def isEmpty(self):
+    return self.t==-1
+  def result(self,a):
+    for i in range(len(a)):
+      alive=True
+      while (not self.isEmpty()) and self.s[self.t]>0 and a[i]<0:
+        if abs(self.s[self.t])<abs(a[i]):
+          self.pop()
+        elif abs(self.s[self.t])==abs(a[i]):
+          self.pop()
+          alive=False
+          break
+        else:
+          alive=False
+          break
+      if alive:
+        self.s.append(a[i])
+        self.t+=1
+    return self.s
+obj=Solution()
+a=[5,10,-15]
+print(obj.result(a))
+    
