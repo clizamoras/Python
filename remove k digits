@@ -1,0 +1,25 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def isEmpty(self):
+    return self.t==-1
+  def result(self,s,k):
+    c=s
+    r=k
+    for i in c:
+      while (not self.isEmpty()) and r>0 and self.s[self.t]>i:
+        self.pop()
+        r-=1
+      self.s.append(i)
+      self.t+=1
+    return self.s
+obj=Solution()
+s='1432219'
+k=3
+print(obj.result(s,k))
