@@ -1,5 +1,6 @@
 class Solution:
     def exist(self,grid,n,ans):
+
         if grid[0][0]==0:
             return ans
         def search(i,j,path):
