@@ -5,7 +5,7 @@ class Solution:
             ans.append(current)
             return
         
-        self.binary(n,current+'0',ans)
+       self.binary(n,current+'0',ans)
 
         if current=="" or current[-1]!='1':
             self.binary(n,current+'1',ans)
