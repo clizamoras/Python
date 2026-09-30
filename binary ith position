@@ -1,3 +1,4 @@
+
 class Solution:
     def binary(self,num,k):
         q=num
