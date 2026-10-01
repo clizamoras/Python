@@ -1,0 +1,22 @@
+class Solution:
+  def result(self,a):
+    n=len(a)
+    if n<3:
+      return 0
+    else:
+      leftMax=[0]*n
+      rightMax=[0]*n
+      leftMax[0]=a[0]
+      for i in range(1,n):
+        leftMax[i]=max(leftMax[i-1],a[i])
+      rightMax[n-1]=a[n-1]
+      for i in range(n-2,-1,-1):
+        rightMax[i]=max(rightMax[i+1],a[i])
+      totalWater=0
+      for i in range(n):
+        waterlevel=min(leftMax[i],rightMax[i])
+        totalWater+=waterlevel-a[i]
+      return totalWater
+obj=Solution()
+a= [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+print(obj.result(a))
