@@ -1,0 +1,27 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def isEmpty(self):
+    return self.t==-1
+  def result(self,a):
+    n=len(a)
+    ans=[1]*n
+    for i in range(n):
+      while (not self.isEmpty()) and a[self.s[self.t]]<=a[i]:
+        self.pop()
+        if self.isEmpty():
+          ans[i]=i+1
+        else:
+          ans[i]=i-self.s[self.t]
+      self.s.append(i)
+      self.t+=1
+    return ans
+obj=Solution()
+a=[100, 80, 60, 70, 60, 75, 85]
+print(obj.result(a))
