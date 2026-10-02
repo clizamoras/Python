@@ -1,0 +1,45 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def isEmpty(self):
+    return self.t==-1
+  def result(self,a):
+    maxarea=0
+    h=[0]*len(a[0])
+    for i in range(len(a)):
+      
+      for j in range(len(a[0])):
+        if a[i][j]==1:
+          h[j]+=1
+        if a[i][j]==0:
+          h[j]=0
+      self.s=[]
+      self.t=-1
+      n=len(h)
+      for i in range(len(h)):
+        while (not self.isEmpty()) and h[i]<h[self.s[self.t]]:
+          hi=h[self.pop()]
+          if not self.isEmpty():
+            w=i-self.s[self.t]-1
+          else:
+            w=i
+          maxarea=max(maxarea,w*hi)
+        self.s.append(i)
+        self.t+=1
+      while not self.isEmpty():
+        hi=h[self.pop()]
+        if not self.isEmpty():
+          w=n-self.s[self.t]-1
+        else:
+          w=n
+        maxarea=max(maxarea,w*hi)
+    return maxarea
+obj=Solution()
+a=[[1, 0, 1, 0, 0], [1, 0, 1, 1, 1], [1, 1, 1, 1, 1], [1, 0, 0, 1, 0]]
+print(obj.result(a))
