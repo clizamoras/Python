@@ -1,0 +1,35 @@
+class Solution:
+  def __init__(self):
+    self.s=[]
+    self.t=-1
+  def pop(self):
+    x=self.s[self.t]
+    self.s.pop()
+    self.t-=1
+    return x
+  def result(self,a):
+    for i in range(len(a)):
+      self.s.append(i)
+      self.t+=1
+    while self.t>0:
+      b=self.pop()
+      c=self.pop()
+      if a[b][c]==1:
+        self.s.append(c)
+        self.t+=1
+      if a[b][c]==0:
+        self.s.append(b)
+        self.t+=1
+    if len(self.s)==1:
+      r=self.pop()
+    for i in range(len(a)):
+      if a[r][i]==1:
+        return -1
+      if a[i][r]==0:
+        return -1
+      if i!=r:
+        break
+    return r
+obj=Solution()
+a=[ [0, 1], [1, 0] ]
+print(obj.result(a))
