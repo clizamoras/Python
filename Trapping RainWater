@@ -1,3 +1,4 @@
+
 class Solution:
   def result(self,a):
     n=len(a)
