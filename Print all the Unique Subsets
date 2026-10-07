@@ -1,3 +1,4 @@
+
 class Solution:
     def subset(self,a,index,current,ans):
         if index==len(a):
