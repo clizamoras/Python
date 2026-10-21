@@ -1,3 +1,4 @@
+
 class Solution:
     def parenthesis(self,n,current,open,close,ans):
         if len(current)==2*n:
