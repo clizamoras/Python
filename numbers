@@ -1,0 +1,15 @@
+<html>
+<body>
+<script>
+let a = 10;
+let b = 20;
+
+if (a > b) {
+    document.write("A is largest");
+}
+else {
+    document.write("B is largest");
+}
+</script>
+</body>
+</html>
