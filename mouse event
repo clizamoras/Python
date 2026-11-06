@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="text">Move the mouse over me</h2>
+
+<script>
+document.getElementById("text").addEventListener("mouseover", function() {
+    this.innerHTML = "Mouse is over the text!";
+});
+</script>
+
+</body>
+</html>
