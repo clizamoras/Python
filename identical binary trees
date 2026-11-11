@@ -1,0 +1,23 @@
+class Node:
+  def __init__(self,data):
+    self.data=data
+    self.left=None
+    self.right=None
+p=Node(1)
+p.left=Node(2)
+p.right=Node(3)
+q=Node(1)
+q.left=Node(2)
+q.right=Node(3)
+class Solution:
+  def identical(self,p,q):
+    if p==None and q==None:
+      return True
+    elif (p!=None and q==None) or (p==None and q!=None):
+      return False
+    if p.data==q.data and self.identical(p.left,q.left) and self.identical(p.right,q.right):
+      return True
+    return False
+   
+obj=Solution()
+print(obj.identical(p,q))
