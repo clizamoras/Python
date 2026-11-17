@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First JavaScript</title>
+</head>
+<body>
+
+    <h2>Welcome!</h2>
+
+    <button onclick="displayMessage()">Click Me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function displayMessage() {
+            document.getElementById("result").innerHTML = "Hello World!";
+        }
+    </script>
+
+</body>
+</html>
