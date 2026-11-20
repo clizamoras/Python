@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Selection Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .container {
+            width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            margin: 8px 0;
+            padding: 8px;
+        }
+
+        #capital {
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Country Selection Form</h2>
+
+    <form onsubmit="return validateform()" onreset="resetform()">
+
+        <label>Name:</label><br>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email">
+        <br><br>
+
+        <label>Country:</label>
+
+        <select id="country" onchange="showCapital()">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+            <option value="Australia">Australia</option>
+        </select>
+
+        <p id="capital">Please select a country</p>
+
+        <br>
+
+        <label>Gender:</label><br>
+
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+
+        <br><br>
+
+        <label>Interests:</label><br>
+
+        <input type="checkbox" name="interest" value="Sports"> Sports
+        <input type="checkbox" name="interest" value="Music"> Music
+        <input type="checkbox" name="interest" value="Reading"> Reading
+        <input type="checkbox" name="interest" value="Travel"> Travel
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+    function showCapital() {
+
+        let country = document.getElementById("country").value;
+
+        let capital = document.getElementById("capital");
+
+        if (country == "India") {
+            capital.innerHTML = "New Delhi";
+        }
+
+        else if (country == "USA") {
+            capital.innerHTML = "Washington, D.C.";
+        }
+
+        else if (country == "Japan") {
+            capital.innerHTML = "Tokyo";
+        }
+
+        else if (country == "France") {
+            capital.innerHTML = "Paris";
+        }
+
+        else if (country == "Australia") {
+            capital.innerHTML = "Canberra";
+        }
+
+        else {
+            capital.innerHTML = "Please select a country";
+        }
+    }
+
+
+    function validateform() {
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let country = document.getElementById("country").value;
+
+        let gender = document.querySelector('input[name="gender"]:checked');
+
+        let interests = document.querySelectorAll('input[name="interest"]:checked');
+
+
+        if (name == "") {
+
+            alert("Please enter your name");
+            return false;
+
+        }
+
+        else if (email == "") {
+
+            alert("Please enter your email");
+            return false;
+
+        }
+
+        else if (!email.includes("@") || !email.includes(".")) {
+
+            alert("Please enter a valid email");
+            return false;
+
+        }
+
+        else if (country == "") {
+
+            alert("Please select a country");
+            return false;
+
+        }
+
+        else {
+
+            let interestList = "";
+
+            interests.forEach(function(item) {
+
+                interestList += item.value + " ";
+
+            });
+
+
+            let genderValue = "Not selected";
+
+            if (gender != null) {
+
+                genderValue = gender.value;
+
+            }
+
+
+            document.getElementById("result").innerHTML =
+
+                "<h3>Entered Details</h3>" +
+                "Name: " + name + "<br>" +
+                "Email: " + email + "<br>" +
+                "Country: " + country + "<br>" +
+                "Gender: " + genderValue + "<br>" +
+                "Interests: " + interestList;
+
+            return false;
+
+        }
+
+    }
+
+
+    function resetform() {
+
+        document.getElementById("capital").innerHTML =
+            "Please select a country";
+
+        document.getElementById("result").innerHTML = "";
+
+    }
+
+</script>
+
+</body>
+</html>
