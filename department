@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSE Department</title>
+</head>
+
+<body bgcolor="lightyellow" id="top">
+
+    <center>
+        <h1 style="color:darkblue;">Computer Science and Engineering</h1>
+        <h2 style="color:red;">St Joseph Engineering College</h2>
+        <h3 style="color:green;">Department Information</h3>
+    </center>
+
+    <hr>
+
+    <h2>Navigation</h2>
+
+    <a href="#about">About Us</a> |
+    <a href="#facilities">Facilities</a> |
+    <a href="#technologies">Technologies</a> |
+    <a href="#images">Images</a> |
+    <a href="#contact">Contact</a> |
+    <a href="faculty.html">Faculty Details</a>
+
+    <hr>
+
+    <h2 id="about" style="color:blue;">About Our Department</h2>
+
+    <p style="font-size:18px;">
+        The <b>Computer Science and Engineering</b> department
+        provides quality education in computer science.
+        It helps students develop technical skills and
+        <i>problem-solving abilities</i>.
+        <u>Our goal is to prepare skilled engineers</u>
+        for the future.
+    </p>
+
+    <hr>
+
+    <h2 id="facilities" style="color:purple;">Department Facilities</h2>
+
+    <h3>Laboratories Available</h3>
+
+    <ol>
+        <li>Computer Programming Lab</li>
+        <li>Database Management Lab</li>
+        <li>Web Technology Lab</li>
+        <li>Computer Networks Lab</li>
+    </ol>
+
+    <h3>Department Activities</h3>
+
+    <ul>
+        <li>Technical Workshops</li>
+        <li>Seminars</li>
+        <li>Hackathons</li>
+        <li>Project Competitions</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="technologies" style="color:brown;">Technologies</h2>
+
+    <p>Some important technologies studied in our department:</p>
+
+    <ul>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Wi-Fi">
+                Wi-Fi
+            </a>
+        </li>
+
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Local_area_network">
+                LAN
+            </a>
+        </li>
+
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Cloud_computing">
+                Cloud Computing
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2 id="images" style="color:darkblue;">Department Images</h2>
+
+    <p>College Campus:</p>
+
+    <a href="https://www.sjec.ac.in/" target="_blank">
+        <img src="college.jpg"
+             alt="College Campus"
+             width="300"
+             height="200">
+    </a>
+
+    <p>Computer Laboratory:</p>
+
+    <img src="lab.jpg"
+         alt="Computer Science Laboratory"
+         width="300"
+         height="200">
+
+    <hr>
+
+    <h2 id="contact" style="color:red;">Contact Us</h2>
+
+    <p>
+        For more information, contact our department:
+    </p>
+
+    <a href="mailto:cse@sjec.ac.in">
+        Send Email
+    </a>
+
+    <hr>
+
+    <center>
+        <a href="#top">Back to Top</a>
+    </center>
+
+</body>
+</html>
