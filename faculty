@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Details</title>
+</head>
+
+<body bgcolor="lightblue">
+
+    <center>
+        <h1 style="color:darkblue;">CSE Department Faculty</h1>
+    </center>
+
+    <hr>
+
+    <h2>Faculty Details</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0"
+           align="center" bgcolor="white">
+
+        <tr bgcolor="lightgreen">
+            <th>Sl No.</th>
+            <th>Faculty Name</th>
+            <th>Designation</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Dr. Kumar</td>
+            <td>Professor</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Ms. Priya</td>
+            <td>Associate Professor</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Mr. Raj</td>
+            <td>Assistant Professor</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <center>
+        <a href="department.html">Back to Department Page</a>
+    </center>
+
+</body>
+</html>
