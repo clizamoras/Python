@@ -1,0 +1,31 @@
+import React,{useState} from "react";
+import "./App.css";
+
+function Button(props){
+  const [disabled,setDisabled]=useState(false);
+  function handleClick(){
+    alert(props.name+"Button was clicked");
+    if(props.name=="Login"){
+      setDisabled(true);
+    }
+   }
+   return(
+   <div>
+     <button onClick={handleClick} disabled={disabled} style={{backgroundColor:props.color}}>
+      {props.name}
+     </button>
+   </div>
+   )
+}
+function App(){
+return(
+<div>
+ <h1>Reusable Button Component</h1>
+ <Button name="Home" color="blue" />
+ <Button name="About" color="red" />
+ <Button name="Contact" color="orange" />
+ <Button name="Login" color="black" />
+</div>
+)
+}
+export default App;
