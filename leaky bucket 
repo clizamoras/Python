@@ -1,0 +1,61 @@
+import java.util.Scanner; //Allows us to use the Scanner class for input from the user.
+import java.lang.*;// It provides core classes like String, Math, etc.
+public class lab7 //Defines a public class named lab7
+{
+public static void main(String[] args) //Entry point of the program.
+{
+int i;// loop counter.
+int a[]=new int[20]; //creates an integer array a of size 20,to store incoming packets
+int buck_rem=0, //Current amount of data inside the bucket
+buck_cap=4, //Maximum bucket capacity
+rate=3, //Outgoing rate
+sent, //Packets sent in the current tick.
+recv; //Packets received in the current tick.
+Scanner in = new Scanner(System.in); //Creates a Scanner object in for reading input.
+System.out.println("Enter the number of packets"); //Asks the user: how many
+packets will arrive.
+int n = in.nextInt(); //Stores the number in n.
+System.out.println("Enter the packets"); //Asks the user to enter packet sizes
+for(i=1;i<=n;i++)
+{
+a[i]= in.nextInt(); //Reads n integers into array a[].
+}
+System.out.println("Clock \t packet size \t accept \t sent \t remaining");
+for(i=1;i<=n;i++) //Loop through each time tick (from 1 to n).
+{//Packet Receiving Part
+if(a[i]!=0) // packet arrived or not
+{
+if(buck_rem+a[i]>buck_cap) // whtr the bucket is overflowed
+recv=-1; // overflow means dropped
+else
+{
+recv=a[i]; //accept packet →
+buck_rem+=a[i]; // add to bucket
+}
+}
+else
+recv=0; // If no packet arrives → recv=0.
+// Packet Sending Part
+if(buck_rem!=0) // If bucket has packets or not
+{
+if(buck_rem<rate) // check if bucket value less than constant rate
+{
+sent=buck_rem; //rem will be stored in sent
+buck_rem=0;// all sent so rem is 0
+}
+else
+{
+sent=rate; //sending constant rate to sent
+buck_rem=buck_rem-rate; // remaining value in the bucket
+}
+}
+else
+sent=0; // If bucket empty → sent=0.
+if(recv==-1) // If packet was dropped (recv=-1), print “dropped”
+System.out.println(+i+ "\t\t" +a[i]+ "\t dropped \t" + sent +"\t" +buck_rem);
+Else // Otherwise print accepted size.
+System.out.println(+i+ "\t\t" +a[i] +"\t\t" +recv +"\t" +sent + "\t"
++buck_rem);
+}
+}
+}
