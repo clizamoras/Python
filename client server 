@@ -1,0 +1,19 @@
+import java.io.*;
+import java.net.*;
+public class HalfDS
+{
+public static void main(String[] args)throws IOException
+{
+ServerSocket ss=new ServerSocket(6666);
+System.out.println("Server Started....");
+Socket s=ss.accept();
+DataInputStream dis=new  
+        DataInputStream(s.getInputStream());
+DataOutputStream dout=new  
+        DataOutputStream(s.getOutputStream());
+String str=(String)dis.readUTF();
+System.out.println(str);
+dout.writeUTF("PONG");
+ss.close();
+}
+}
